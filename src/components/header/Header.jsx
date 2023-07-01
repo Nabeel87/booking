@@ -88,10 +88,10 @@ const Header = () => {
                     </div>
                     <div className="headerSearchItem">
                         <FontAwesomeIcon icon={faPerson} className="headericon" />
-                        <span className="headerSearchText">
+                        <span className="headerSearchText" onClick={()=> setOpenOptions(!openOptions)}>
                             {`${options.adult} Adult - ${options.children} Children - ${options.room} Room`}
                         </span>
-                        <div className="options">
+                        {openOptions && <div className="options">
                             <div className="optionItem">
                                 <span className="optionText">Adult</span>
                                 <div className="optionCounter">
@@ -144,7 +144,7 @@ const Header = () => {
                                     </button>
                                 </div>
                             </div>
-                        </div>
+                        </div>}
                     </div>
                     <div className="headerSearchItem">
                         <button className="headerBtn">Search</button>
