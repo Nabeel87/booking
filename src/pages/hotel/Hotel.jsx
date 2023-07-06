@@ -37,14 +37,18 @@ const Hotel = () => {
     setSlideNumber(i);
     setOpen(true);
   }
-
+  
   const handleMove = (direction) => {
     let newSlideNumber;
+    
+    let pLen = photos.length;
+    let photoLen = pLen - 1;
+    
 
     if(direction==="l"){
       newSlideNumber = slideNumber === 0 ? 5 : slideNumber-1
     }else{
-      newSlideNumber = slideNumber === 5 ? 0 : slideNumber+1
+      newSlideNumber = slideNumber === photoLen ? 0 : slideNumber+1
     }
 
     setSlideNumber(newSlideNumber);
